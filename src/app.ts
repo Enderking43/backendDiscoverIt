@@ -1,4 +1,5 @@
-const express = require('express')
+import express, {Request} from 'express'
+
 const app = express()
 
 const modelComment = require('./models').Comment
@@ -10,6 +11,9 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 
 // Alta
+app.route('/createUser', (req, res) => {
+})
+
 app.post('/createUser', (req,res) => {
   modelUser.create(req.body)
     .then( (data) => {
